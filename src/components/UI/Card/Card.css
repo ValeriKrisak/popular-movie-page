@@ -1,0 +1,126 @@
+.card-container{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    border: 1px solid #e3e3e3;
+    border-radius: 8px;
+    overflow: hidden; 
+    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+    background-color: #fff;
+}
+
+.dots-button-img {
+    position: relative;
+  top: 0;
+  left: 0;
+  width: 2em;
+  height: 2em;
+  line-height: inherit;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: inherit;
+  box-sizing: border-box;
+    background-image: url("https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-947-circle-more-white-4c440dfc1b0e626c70f4853dbbce9c4d1f2c5d8f3e05a7d3df47881cbd816adf.svg");
+    opacity: 0.5;
+}
+
+  .glyphicon{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+
+  .dots-button{
+    background-color: rgba(24, 26, 27, 0);
+  background-image: none;
+  text-decoration-color: currentcolor;
+  position: absolute;
+  
+  transform: translateX(-50%);
+  border: none;
+  }
+  .dots-button:hover{
+    color: rgb(1, 180, 228)
+  }
+
+  .dots-button-img:hover{
+    background-image: url("https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-947-circle-more-5d2623ed440c97b015f42cd7275fc052cf0569ad1f84b7531704ae01cda651cb.svg");
+    color: inherit;
+}
+
+.dots-button-container{
+    position: absolute;
+    top: 8px; 
+    left: 85%;
+  z-index: 4;
+  opacity: .6; 
+}
+
+.dots-button-container:hover{
+    opacity: 1;
+  filter: brightness(0) saturate(100%) invert(53%) sepia(33%) saturate(3054%) hue-rotate(156deg) brightness(98%) contrast(99%);
+ 
+}
+
+.card-title{
+    font-size: 1em;
+  margin: 0;
+  width: 100%;
+  word-wrap: normal;
+  overflow-wrap: break-word;
+}
+.card-text{
+    margin: 1.5rem 0.7rem auto 0.5rem;
+}
+
+.card-text p {
+    font-size: 1em;
+    margin-top: 0.3rem;
+    padding: 0;
+    color: rgba(0,0,0,.6);
+}
+
+.img-container img{
+    display: inline-block;
+  width: 100%;
+  height: auto;
+}
+
+.score-bar{
+    height: 38px;
+    width: 38px;
+}
+
+.overlay {
+    position: absolute;
+    bottom: calc(15% + 30px);
+  left: calc(20% - 25px); 
+  width: 38px;
+  height: 38px;
+  }
+
+  .slider-container {
+    padding: 20px;
+  }
+  
+  .slider-section {
+    margin-bottom: 20px;
+  }
+  
+  .slider-section h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  @media (max-width: 768px) {
+    .card-container {
+      max-width: 220px;
+    }}
+
+
+
+
