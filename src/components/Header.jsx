@@ -93,11 +93,11 @@ export default function Header() {
           </div>
         </div>
       </header>
-      {loadingStatus === "loading" && (
+      {/*  {loadingStatus === "loading" && (
         <div className="loading-container">
           <div className="loading-bar" />
         </div>
-      )}
+      )} */}
     </>
   );
 }

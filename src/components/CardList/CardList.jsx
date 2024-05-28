@@ -36,8 +36,6 @@ export default function CardList() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [page, filter, handleScroll]);
 
-  console.log(loadingStatus);
-
   return (
     <>
       {loadingStatus === "error" && (

@@ -1,9 +1,9 @@
 import axios from 'axios';
-import { setCountries, setLanguages, setProviders } from '../store/uiSlice';
+import { setProviders } from '../store/uiSlice';
 import Error from '../components/UI/Error/Error';
 const apiKey = process.env.REACT_APP_API_KEY;
 
-export const fetchCountries = () => async (dispatch) => {
+/* export const fetchCountries = () => async (dispatch) => {
     try {
         const response = await axios.get(`https://api.themoviedb.org/3/configuration/countries`, {
             params: {
@@ -29,7 +29,7 @@ export const fetchLanguages = () => async (dispatch) => {
     } catch (error) {
         <Error message={error} />;
     }
-};
+}; */
 
 export const fetchProviders = () => async (dispatch) => {
     try {
