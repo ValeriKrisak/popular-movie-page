@@ -8,13 +8,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { MENU_LIST, ICON_MENU } from "../constants/constants";
 import { useState, useEffect, useCallback } from "react";
-import { useSelector } from "react-redux";
+//import { useSelector } from "react-redux";
 
 export default function Header() {
   const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
   const [visible, setVisible] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { loadingStatus } = useSelector((state) => state.data);
+  // const { loadingStatus } = useSelector((state) => state.data);
 
   const handleScroll = useCallback(() => {
     const currentScrollPos = window.scrollY;
