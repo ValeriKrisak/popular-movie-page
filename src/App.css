@@ -1,60 +1,218 @@
-main {
-  flex-wrap: wrap;
+.page-wrap{
+    flex: 1 1 auto;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  body,
+  div.page-wrap{
+    display:flex;
+    min-height:100%;
+    height:auto;
+    justify-content: center;
+  }
+
+
+  header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #032541;
+    height: var(--maxHeaderHeight);
+    z-index: 50;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .visible {
+    transform: translateY(0);
+  }
+  
+  .hidden {
+    transform: translateY(-100%);
+  }
+  
+  .logo {
+    display: block;
+    margin-right: 16px;
+    width: 154px;
+    height: 20px;
+  }
+  
+  .nav-bars{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+  
+  .sub-menus,
+  .user-menus {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .sub-menus{
+    justify-content: flex-start;
+  }
+  
+  .user-menus{
+    justify-content: flex-end;
+    
+  }
+  
+  .user-menus button{
+    color: #fff;
+    font-weight: 400;
+    padding: 0.5rem;
+    font-weight: 400;
+    font-size: 1.25rem;
+    border: none;
+    background-color: transparent;
+  }
+  
+  .icon-menu {
+    margin: 0.5rem;
+  }
+
+  .menu-icon{
+    display: none;
+  }
+
+  .mobile-nav-bars{
+    display: none;
+  }
+
+
+  /* Media Queries for header*/
+@media (max-width: 768px) {
+  .mobile-nav-bars{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+   .mobile-nav-bars .menu-icon{
+      visibility: visible;
+    }
+
+    .nav-bars{
+      display: none;
+    }
+  
+    .mobile-nav-bars{
+      padding-left: 1rem;
+      padding-right: 1rem;
+      max-width: 100%;
+    }
+    
+    .mobile-nav-bars .menu-icon {
+      display: block;
+      color: white;
+  
+    }
+
+    .mobile-nav-bars .logo-mobile{
+      margin: 1rem auto;
+    }
+
+    .mobile-nav-bars .logo-mobile img{
+      height: auto;
+  max-width: 4rem;
+    }
+  
+    .category-name{
+      color: #032541 !important;
+    }
+  
+    .category-name:hover{
+      color: #01b4e4 !important;
+      background-color: lightgray !important;
+    }
+  
+    .menu-content {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      border:#01b4e4 solid 1px;
+      background-color: #fff;
+    }
+  
+    .menu-content.open {
+      display: flex;
+    }
+  
+    
+    .mobile-icon-menu button{
+      color: #fff;
+      font-weight: 400;
+      padding: 0.1rem;
+      font-weight: 400;
+      font-size: 1.25rem;
+      border: none;
+      background-color: transparent;
+    }
+    
+    .icon-menu {
+      margin: 0.3rem;
+    }
+  }
+  
+  main {
+    flex-wrap: wrap;
   align-content: flex-start;
   background-color: #fff;
-  margin-top: 64px;
-  padding: 2.5rem 6rem;
-}
-
-.title {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.title h2 {
-  font-size: 1.6em;
-}
+  margin-top: calc(var(--maxHeaderHeight) - 2rem)
+  }
 
 
-.submenu { grid-area: submenu; }
-.title { grid-area: title; }
-.cards { grid-area: cardlist; }
+  .inner-container {
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:50% 50%
+  }
 
+  .inner-container{
+    flex-wrap:wrap;
+    align-items:flex-start;
+    align-content:flex-start;
+    max-width:var(--maxPrimaryPageWidth);
+  }
 
-.grid-container {
-  display: grid;
-  grid-template-areas:
-    'title title'
-    'submenu cardlist';
-
-  gap: 10px;
-  grid-template-columns: 20% 80%;
-  grid-template-rows: 10% auto 10%
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-  .title {
+  .title{
     width: 100%;
-    margin: 0.4rem 0.5rem;
-  }
-  
-  .title h2 {
-    font-size: 1.4rem;
+    margin-bottom: 20px;
   }
 
-  .grid-container {
-    grid-template-areas:
-      'title title'
-      'submenu cardlist';
-     
-    grid-template-columns: 40% 60%;
-    grid-template-rows: 10% auto 10%;
+  .content{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
   }
 
-  main{
-    margin-top: 2.5rem;
-    padding: 1rem 0.5rem;
+  .cards{
+    margin-top: -30px;
   }
+
+  .white-column{
+    padding-left: 30px;
+  }
+
+  .inner-wrapper{
+    max-width: var(--maxPrimaryPageWidth);
+  padding: 30px 40px;
+  }
+
+
   
-}

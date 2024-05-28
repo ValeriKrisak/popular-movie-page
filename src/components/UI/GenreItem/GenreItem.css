@@ -10,12 +10,21 @@ display: inline-flex;
 
 li:hover{
     background-color: rgb(1, 180, 228);
-  color: #fff;
   border-color: rgb(1, 180, 228);
 }
 
 li.selected {
   background-color: rgb(1, 180, 228);
-  color: #fff;
+  
   border-color: rgb(1, 180, 228);
+}
+
+.genre-button{
+  border: none;
+  background: transparent;
+}
+
+li:hover .genre-button,
+li.selected .genre-button{
+  color: #fff;
 }

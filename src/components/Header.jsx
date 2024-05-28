@@ -1,6 +1,11 @@
 import MenuButton from "./UI/MenuButton/MenuButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faTimes,
+  faUser,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
 import { MENU_LIST, ICON_MENU } from "../constants/constants";
 import { useState, useEffect, useCallback } from "react";
 
@@ -35,10 +40,7 @@ export default function Header() {
                 alt="The movie database logo"
               />
             </div>
-            <div className="menu-icon" onClick={toggleMenu}>
-              <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
-            </div>
-            <div className={`menu-content ${menuOpen ? "open" : ""}`}>
+            <div>
               {MENU_LIST.map((item) => {
                 return (
                   <MenuButton key={item.id} options={item.categories}>
@@ -57,6 +59,34 @@ export default function Header() {
               );
             })}
           </nav>
+        </div>
+        <div className="mobile-nav-bars">
+          <div className="menu-icon" onClick={toggleMenu}>
+            <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
+          </div>
+          <div className={`menu-content ${menuOpen ? "open" : ""}`}>
+            {MENU_LIST.map((item) => {
+              return (
+                <MenuButton key={item.id} options={item.categories}>
+                  {item.name}
+                </MenuButton>
+              );
+            })}
+          </div>
+          <div className="logo-mobile">
+            <img
+              src="https://cdn-us.statusiq.com/sp/api/public/statuspages/logo/CV8aDz4Xn5ikJZrRQr_JNAaezCCS6a2bPfyHLNH2z9w=?default=1"
+              alt="The movie database logo mobile"
+            />
+          </div>
+          <div className="mobile-icon-menu">
+            <button className="icon-menu">
+              <FontAwesomeIcon icon={faUser} />
+            </button>
+            <button className="icon-menu">
+              <FontAwesomeIcon icon={faSearch} />
+            </button>
+          </div>
         </div>
       </header>
     </>

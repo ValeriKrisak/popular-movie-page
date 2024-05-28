@@ -1,35 +1,30 @@
-.collapsible-card {
-  border: 1px solid #e3e3e3;
+  .collapsible-card{
+    min-width:260px;
+    width:260px;
+    border-radius:var(--imageBorderRadius);
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+    border:1px solid rgba(var(--lightGrey),1);
+    background-color:#fff
+  }
+
+  .collapsible-card+.collapsible-card{
+    margin-top: 12px;
+  }
+
+  .collapsible-card .card-header span{
+    background-color: rgba(0,0,0,.08);
   border-radius: 8px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,.1);
-  margin-bottom: 1rem;
-  width: 100%;
-  }
-  
-  .card-header {
-    width: 100%;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
+  display: inline-flex;
   align-items: center;
-  padding: 14px 16px;
+  padding: 2.5px 10px;
+  font-family: "Roboto Mono",monospace;
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-left: 2rem;
   }
   
-  .card-header h2 {
-    margin: 0;
-    font-size: 16px;
-    font-weight: 600;
-  }
-  
-  .card-header button {
-    padding: 5px 10px;
-    font-size: 14px;
-    cursor: pointer;
-  }
-
-
   

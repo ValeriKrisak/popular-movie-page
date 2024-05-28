@@ -5,21 +5,32 @@ import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
   return (
-    <>
+    <div className="page-wrap">
       <Header />
-      <main className="grid-container">
-        <section className="title">
-          <h2>Popular Movies</h2>
-        </section>
-
-        <section className="submenu">
-          <Sidebar />
-        </section>
-        <section className="cards">
-          <CardList />
-        </section>
+      <main>
+        <div className="inner-container">
+          <div className="inner-wrapper">
+            <section>
+              <div className="title">
+                <h2>Popular Movies</h2>
+              </div>
+            </section>
+            <section className="content">
+              <div className="submenu">
+                <Sidebar />
+              </div>
+              <div className="white-column">
+                <div className="cards">
+                  <div className="cards-wrapper">
+                    <CardList />
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
       </main>
-    </>
+    </div>
   );
 }
 

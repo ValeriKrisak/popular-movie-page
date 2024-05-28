@@ -15,6 +15,7 @@ export default function Checkbox({ title, label }) {
           type="checkbox"
           id="custom-checkbox"
           onChange={handleCheckboxChange}
+          className="checkbox"
         />
         <label htmlFor="custom-checkbox" className="checkbox-label">
           {label}

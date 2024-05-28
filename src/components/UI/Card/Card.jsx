@@ -51,23 +51,23 @@ export default function Card({ title, date, image, vote }) {
           </button>
         </div>
       </div>
-      <div className="score-bar overlay">
-        <CircularProgressbar
-          value={percentage}
-          text={`${percentage}%`}
-          className="circular-progress"
-          styles={buildStyles({
-            textColor: "#fff",
-            pathColor: setcolor,
-            trailColor: "#333",
-            backgroundColor: "#000",
-            textSize: "2rem",
-          })}
-          background
-          backgroundPadding={6}
-        />
-      </div>
-      <div className="card-text">
+      <div className="card-content">
+        <div className="score-bar overlay">
+          <CircularProgressbar
+            value={percentage}
+            text={`${percentage}%`}
+            className="circular-progress"
+            styles={buildStyles({
+              textColor: "#fff",
+              pathColor: setcolor,
+              trailColor: "#333",
+              backgroundColor: "#000",
+              textSize: "2rem",
+            })}
+            background
+            backgroundPadding={6}
+          />
+        </div>
         <h2 className="card-title">{title}</h2>
         <p>{formatDate(date)}</p>
       </div>

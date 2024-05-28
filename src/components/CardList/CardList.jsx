@@ -1,21 +1,40 @@
 import Card from "../UI/Card/Card";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchData, loadMoreData } from "../../actions/dataActions";
+import { setScrollEnabled } from "../../store/dataSlice";
 import "./CardList.css";
 import Error from "../UI/Error/Error";
+import Info from "../UI/Info";
 
 export default function CardList() {
   const dispatch = useDispatch();
-  const { items, page, filter } = useSelector((state) => state.data);
+  const { items, page, filter, scrollEnabled } = useSelector(
+    (state) => state.data
+  );
 
   useEffect(() => {
-    dispatch(fetchData(page, filter));
-  }, [dispatch, page, filter]);
+    dispatch(fetchData(1, filter));
+  }, [dispatch, filter]);
 
   const handleLoadMore = () => {
     dispatch(loadMoreData(page, filter));
+    dispatch(setScrollEnabled(true));
   };
+
+  const handleScroll = useCallback(() => {
+    if (
+      window.innerHeight + window.scrollY >= document.body.offsetHeight - 500 &&
+      scrollEnabled
+    ) {
+      dispatch(loadMoreData(page, filter));
+    }
+  }, [dispatch, scrollEnabled, filter, page]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [page, filter, handleScroll]);
 
   return (
     <>
@@ -36,10 +55,15 @@ export default function CardList() {
           })}
         </div>
       )}
-
-      <button className="more-button" onClick={handleLoadMore}>
-        <h2>Load More </h2>
-      </button>
+      {items.length < 20 ? (
+        <div>
+          <Info message="Sorry, there are no more items available under this filter" />
+        </div>
+      ) : (
+        <button className="more-button" onClick={handleLoadMore}>
+          <p>Load More </p>
+        </button>
+      )}
     </>
   );
 }

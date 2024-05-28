@@ -28,7 +28,7 @@ export const loadMoreData = (page, filter) => async (dispatch) => {
     try {
         const response = await axios.get(`https://api.themoviedb.org/3/discover/movie`, {
             params: {
-                page: page,
+                page: page + 1,
                 with_genres: filter,
                 api_key: apiKey
             }
