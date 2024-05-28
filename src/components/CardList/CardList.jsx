@@ -9,7 +9,7 @@ import Info from "../UI/Info";
 
 export default function CardList() {
   const dispatch = useDispatch();
-  const { items, page, filter, scrollEnabled } = useSelector(
+  const { items, page, filter, scrollEnabled, loadingStatus } = useSelector(
     (state) => state.data
   );
 
@@ -36,33 +36,48 @@ export default function CardList() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [page, filter, handleScroll]);
 
+  console.log(loadingStatus);
+
   return (
     <>
-      {items.length === 0 ? (
-        <Error message=" Whoops! It seems like there are no more movies matching your selected genres. Please try using different genres and searching again. Thank you!" />
-      ) : (
-        <div className="card-list">
-          {items.map((item) => {
-            return (
-              <Card
-                key={item.id}
-                title={item.title}
-                date={item.release_date}
-                image={item.poster_path}
-                vote={item.vote_average}
-              />
-            );
-          })}
-        </div>
+      {loadingStatus === "error" && (
+        <Error
+          className="card-list"
+          message="Whoops, something went wrong and data are not ready. Please try later."
+        />
       )}
-      {items.length < 20 ? (
-        <div>
-          <Info message="Sorry, there are no more items available under this filter" />
-        </div>
-      ) : (
-        <button className="more-button" onClick={handleLoadMore}>
-          <p>Load More </p>
-        </button>
+
+      {loadingStatus === "loaded" && (
+        <>
+          {items.length === 0 ? (
+            <Error
+              className="card-list"
+              message="Whoops! It seems like there are no more movies matching your selected genres. Please try using different genres and searching again. Thank you!"
+            />
+          ) : (
+            <div className="card-list">
+              {items.map((item) => (
+                <Card
+                  key={item.id}
+                  title={item.title}
+                  date={item.release_date}
+                  image={item.poster_path}
+                  vote={item.vote_average}
+                />
+              ))}
+            </div>
+          )}
+          {items.length < 20 ? (
+            <Info
+              className="card-list"
+              message="Sorry, there are no more items available under this filter"
+            />
+          ) : (
+            <button className="more-button" onClick={handleLoadMore}>
+              <p>Load More</p>
+            </button>
+          )}
+        </>
       )}
     </>
   );

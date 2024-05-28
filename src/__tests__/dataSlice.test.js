@@ -4,8 +4,6 @@ import dataReducer, {
     setPage,
     setGenres,
     setFilter,
-    addFilter,
-    removeFilter
 } from '../store/dataSlice.js';
 
 describe('dataSlice reducer', () => {

@@ -8,6 +8,7 @@ const dataSlice = createSlice({
         filter: [],
         genres: [],
         scrollEnabled: false,
+        loadingStatus: '',
     },
     reducers: {
         setData: (state, action) => {
@@ -31,10 +32,12 @@ const dataSlice = createSlice({
         },
         setScrollEnabled: (state, action) => {
             state.scrollEnabled = action.payload;
+        },
+        setLoading: (state, action) => {
+            state.loadingStatus = action.payload;
         }
-
     },
 });
 
-export const { setData, addData, setPage, setGenres, setFilter, setScrollEnabled } = dataSlice.actions;
+export const { setData, addData, setPage, setGenres, setFilter, setScrollEnabled, setLoading } = dataSlice.actions;
 export default dataSlice.reducer;

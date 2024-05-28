@@ -25,5 +25,4 @@ describe('Card component', () => {
         expect(imgElement).toHaveAttribute('src', defaultimg);
     });
 
-
 });

@@ -1,12 +1,12 @@
 import axios from 'axios';
-import { setData, addData, setPage, setGenres } from '../store/dataSlice';
+import { setData, addData, setPage, setGenres, setLoading } from '../store/dataSlice';
 import Error from '../components/UI/Error/Error';
 const apiKey = process.env.REACT_APP_API_KEY;
 
 
 export const fetchData = (page, filter) => async (dispatch) => {
     const apiKey = process.env.REACT_APP_API_KEY;
-
+    dispatch(setLoading('loading'));
     try {
         const response = await axios.get(`https://api.themoviedb.org/3/discover/movie`, {
             params: {
@@ -17,14 +17,16 @@ export const fetchData = (page, filter) => async (dispatch) => {
         });
 
         const dataArray = Object.values(response.data.results);
+
         dispatch(setData(dataArray));
+        dispatch(setLoading('loaded'));
     } catch (error) {
-        <Error message={error} />;
+        (dispatch(setLoading('error')) && <Error message={'Data has been corrupted'} />)
+
     }
 };
 
 export const loadMoreData = (page, filter) => async (dispatch) => {
-
     try {
         const response = await axios.get(`https://api.themoviedb.org/3/discover/movie`, {
             params: {
@@ -37,7 +39,7 @@ export const loadMoreData = (page, filter) => async (dispatch) => {
         dispatch(addData(dataArray));
         dispatch(setPage(page + 1));
     } catch (error) {
-        <Error message={error} />;
+        (dispatch(setLoading('error')) && <Error message={'Data has been corrupted'} />)
     }
 };
 
@@ -54,32 +56,4 @@ export const fetchGenres = () => async (dispatch) => {
         <Error message={error} />;
     }
 };
-
-/* export const fetchCountries = () => async (dispatch) => {
-    try {
-        const response = await axios.get(`https://api.themoviedb.org/3/configuration/countries`, {
-            params: {
-                api_key: apiKey
-            }
-        });
-        const dataArray = Object.values(response.data)
-        dispatch(setCountries(dataArray));
-    } catch (error) {
-        <Error message={error} />;
-    }
-};
-
-export const fetchLanguages = () => async (dispatch) => {
-    try {
-        const response = await axios.get(`https://api.themoviedb.org/3/configuration/languages`, {
-            params: {
-                api_key: apiKey
-            }
-        });
-        const dataArray = Object.values(response.data)
-        dispatch(setLanguages(dataArray));
-    } catch (error) {
-        <Error message={error} />;
-    }
-}; */
 

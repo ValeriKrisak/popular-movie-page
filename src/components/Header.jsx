@@ -8,11 +8,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { MENU_LIST, ICON_MENU } from "../constants/constants";
 import { useState, useEffect, useCallback } from "react";
+import { useSelector } from "react-redux";
 
 export default function Header() {
   const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
   const [visible, setVisible] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { loadingStatus } = useSelector((state) => state.data);
 
   const handleScroll = useCallback(() => {
     const currentScrollPos = window.scrollY;
@@ -75,9 +77,11 @@ export default function Header() {
           </div>
           <div className="logo-mobile">
             <img
-              src="https://cdn-us.statusiq.com/sp/api/public/statuspages/logo/CV8aDz4Xn5ikJZrRQr_JNAaezCCS6a2bPfyHLNH2z9w=?default=1"
+              src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg"
               alt="The movie database logo mobile"
-            />
+              width="55"
+              height="40"
+            ></img>
           </div>
           <div className="mobile-icon-menu">
             <button className="icon-menu">
@@ -89,6 +93,11 @@ export default function Header() {
           </div>
         </div>
       </header>
+      {loadingStatus === "loading" && (
+        <div className="loading-container">
+          <div className="loading-bar" />
+        </div>
+      )}
     </>
   );
 }

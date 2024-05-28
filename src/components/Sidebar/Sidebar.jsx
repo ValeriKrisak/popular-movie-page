@@ -48,7 +48,7 @@ export default function Sidebar() {
   return (
     <>
       <FilterPanel title="Sort">
-        <div className="filter-section">
+        <div className="filter-section full-width">
           <Select title="Sort Results by" collection={SORT_COLLECTION} />
         </div>
       </FilterPanel>
@@ -140,7 +140,7 @@ export default function Sidebar() {
           <input placeholder="Filter by keywords..." />
         </div>
       </FilterPanel>
-      <div className="">
+      <div>
         <button
           id="searchButton"
           className={`search-button filter-apply ${

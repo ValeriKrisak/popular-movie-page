@@ -8,6 +8,7 @@ function App() {
     <div className="page-wrap">
       <Header />
       <main>
+        <div className="loading-bar" />
         <div className="inner-container">
           <div className="inner-wrapper">
             <section>
