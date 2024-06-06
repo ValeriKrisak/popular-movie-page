@@ -1,6 +1,7 @@
 import Checkbox from "../UI/Checkbox/Checkbox";
 import FilterPanel from "../UI/FilterPanel/FilterPanel";
 import Select from "../UI/Select/Select";
+import LazySelect from "../UI/LazySelect/LazySelect";
 import "./Sidebar.css";
 import {
   SORT_COLLECTION,
@@ -22,7 +23,6 @@ import { fetchProviders } from "../../actions/uiAction";
 export default function Sidebar() {
   const dispatch = useDispatch();
   const { genres } = useSelector((state) => state.data);
-  const { providers } = useSelector((state) => state.ui);
   const [selectedIds, setSelectedIds] = useState([]);
   const [isDisabledButton, setIsDisabledButton] = useState(true);
 
@@ -60,21 +60,9 @@ export default function Sidebar() {
           />
         </div>
         <div className="filter-section">
-          <Select title="Country" collection={SORT_COLLECTION} />
-
+          <LazySelect type="countries" title="Country" />
           <div className="provider-wrapper">
-            <span className="provider-list">
-              {providers
-                .filter((item) => [1, 3, 4, 5].includes(item.display_priority))
-                .map((filteredItem) => (
-                  <li key={filteredItem.provider_id} className="providers-item">
-                    <img
-                      src={`https://media.themoviedb.org/t/p/original/${filteredItem.logo_path}`}
-                      alt={filteredItem.provider_name}
-                    />
-                  </li>
-                ))}
-            </span>
+            <LazySelect type="providers" title="Providers" />
           </div>
         </div>
       </FilterPanel>
@@ -121,7 +109,7 @@ export default function Sidebar() {
           <h3 className="h3-title">Certification</h3>
         </div>
         <div className="filter-section">
-          <Select title="Language" collection={SORT_COLLECTION} />
+          <LazySelect type="languages" title="Language" />
         </div>
         <div className="filter-section">
           <h3 className="h3-title">User Score</h3>
