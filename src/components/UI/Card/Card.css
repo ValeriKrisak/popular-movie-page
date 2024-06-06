@@ -1,23 +1,23 @@
-.card-container{
-  position:relative;
-  top:0;
-  left:0;
-  display:flex;
-  flex-wrap:wrap;
-  align-content:flex-start;
-  border:1px solid #e3e3e3;
-  border-radius:var(--imageBorderRadius);
-  overflow:hidden;
-  margin-top:30px;
-  width:calc((100vw - 80px - 260px - (var(--discoverColumnPadding)*var(--numberOfDiscoverColumns)))/var(--numberOfDiscoverColumns));
-  max-width:calc((var(--maxPrimaryPageWidth) - 80px - 260px - (var(--discoverColumnPadding)*var(--numberOfDiscoverColumns)))/var(--numberOfDiscoverColumns));
-  box-shadow: 0 2px 8px rgba(0,0,0,.1);
-  border: 1px solid rgba(var(--lightGrey),1);
+.card-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  border: 1px solid #e3e3e3;
+  border-radius: var(--imageBorderRadius);
+  overflow: hidden;
+  margin-top: 30px;
+  width: calc((100vw - 80px - 260px - (var(--discoverColumnPadding)*var(--numberOfDiscoverColumns)))/var(--numberOfDiscoverColumns));
+  max-width: calc((var(--maxPrimaryPageWidth) - 80px - 260px - (var(--discoverColumnPadding)*var(--numberOfDiscoverColumns)))/var(--numberOfDiscoverColumns));
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+  border: 1px solid rgba(var(--lightGrey), 1);
   background-color: #fff;
 }
 
 .dots-button-img {
-    position: relative;
+  position: relative;
   top: 0;
   left: 0;
   width: 2em;
@@ -27,112 +27,113 @@
   background-repeat: no-repeat;
   color: inherit;
   box-sizing: border-box;
-    background-image: url("https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-947-circle-more-white-4c440dfc1b0e626c70f4853dbbce9c4d1f2c5d8f3e05a7d3df47881cbd816adf.svg");
-    opacity: 0.5;
+  background-image: url("https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-947-circle-more-white-4c440dfc1b0e626c70f4853dbbce9c4d1f2c5d8f3e05a7d3df47881cbd816adf.svg");
+  opacity: 0.5;
 }
 
-  .glyphicon{
-    display: flex;
+.glyphicon {
+  display: flex;
   align-items: center;
   justify-content: center;
-  }
+}
 
-  .dots-button{
-    background-color: rgba(24, 26, 27, 0);
+.dots-button {
+  background-color: rgba(24, 26, 27, 0);
   background-image: none;
   text-decoration-color: currentcolor;
   position: absolute;
-  
+
   transform: translateX(-50%);
   border: none;
-  }
-  .dots-button:hover{
-    color: rgb(1, 180, 228)
-  }
-
-  .dots-button-img:hover{
-    background-image: url("https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-947-circle-more-5d2623ed440c97b015f42cd7275fc052cf0569ad1f84b7531704ae01cda651cb.svg");
-    color: inherit;
 }
 
-.dots-button-container{
-    position: absolute;
-    top: 8px; 
-    left: 85%;
+.dots-button:hover {
+  color: rgb(1, 180, 228)
+}
+
+.dots-button-img:hover {
+  background-image: url("https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-947-circle-more-5d2623ed440c97b015f42cd7275fc052cf0569ad1f84b7531704ae01cda651cb.svg");
+  color: inherit;
+}
+
+.dots-button-container {
+  position: absolute;
+  top: 8px;
+  left: 85%;
   z-index: 4;
-  opacity: .6; 
+  opacity: .6;
 }
 
-.dots-button-container:hover{
-    opacity: 1;
+.dots-button-container:hover {
+  opacity: 1;
   filter: brightness(0) saturate(100%) invert(53%) sepia(33%) saturate(3054%) hue-rotate(156deg) brightness(98%) contrast(99%);
- 
+
 }
 
 
-.img-container{
-  width:100%;
-  height:calc((100vw - 80px - 260px - (var(--discoverColumnPadding)*var(--numberOfDiscoverColumns)))/var(--numberOfDiscoverColumns)*1.5);
-  max-height:calc((var(--maxPrimaryPageWidth) - 80px - 260px - (var(--discoverColumnPadding)*var(--numberOfDiscoverColumns)))/var(--numberOfDiscoverColumns)*1.5)
+.img-container {
+  width: 100%;
+  height: calc((100vw - 80px - 260px - (var(--discoverColumnPadding)*var(--numberOfDiscoverColumns)))/var(--numberOfDiscoverColumns)*1.5);
+  max-height: calc((var(--maxPrimaryPageWidth) - 80px - 260px - (var(--discoverColumnPadding)*var(--numberOfDiscoverColumns)))/var(--numberOfDiscoverColumns)*1.5)
 }
 
-.img-container img{
-    display: inline-block;
+.img-container img {
+  display: inline-block;
   width: 100%;
   height: auto;
 }
 
-.score-bar{
-    height: 38px;
-    width: 38px;
+.score-bar {
+  height: 38px;
+  width: 38px;
 }
 
 .overlay {
   position: absolute;
   top: -19px;
   left: 10px;
-  }
-
-
-.card-content{
-  width:100%;
-    padding:26px 10px 12px;
-    position:relative;
-    white-space:normal;
-    display:flex;
-    align-content:flex-start;
-    flex-wrap:wrap
 }
 
-.card-content h2{
-  font-size:1em;
-    margin:0;
-    width:100%;
-    word-wrap:normal;
-    overflow-wrap:break-word
+
+.card-content {
+  width: 100%;
+  padding: 26px 10px 12px;
+  position: relative;
+  white-space: normal;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap
 }
 
-.card-content p{
-  font-size:1em;
-    margin:0;
-    padding:0;
-    color:rgba(0,0,0,.6)
+.card-content h2 {
+  font-size: 1em;
+  margin: 0;
+  width: 100%;
+  word-wrap: normal;
+  overflow-wrap: break-word
+}
+
+.card-content p {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, .6)
 }
 
 
 @media (max-width: 768px) {
-  .dots-button{
+  .dots-button {
     display: none;
   }
 
-  .CircularProgressbar{
+  .CircularProgressbar {
     display: none;
   }
 
-.white-column{
-  padding-top: 30px;
-  padding-left: 0px;
-}
+  .white-column {
+    padding-top: 30px;
+    padding-left: 0px;
+  }
 
   .card-container {
     width: 100%;
@@ -141,17 +142,17 @@
     flex-wrap: nowrap;
   }
 
-  .card-container .img-container{
+  .card-container .img-container {
     min-width: 94px;
-  width: 94px;
-  height: 141px;
+    width: 94px;
+    height: 141px;
   }
 
-  .card-container .card-content{
+  .card-container .card-content {
     padding: 14px;
     display: flex;
     align-content: center;
     align-items: center;
     flex-wrap: wrap;
   }
-  }
+}

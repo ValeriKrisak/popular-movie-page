@@ -1,5 +1,4 @@
-  
-  .sort-results .select-container select{
+  .sort-results .select-container select {
     border-width: 0;
     outline: 0;
     background: 0 0;
@@ -14,8 +13,8 @@
     margin: 0;
     padding: 0.5rem 1rem;
   }
-  
-  .select-container{
+
+  .select-container {
     border-color: #e4e7eb;
     color: #212529;
     background-color: #e4e7eb;

@@ -1,12 +1,12 @@
 .card-list {
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap
-  }
-  
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap
+}
 
-  .more-button{
+
+.more-button {
   margin-top: 30px;
   padding: 0;
   max-width: 100%;
@@ -15,16 +15,16 @@
   justify-content: center;
   border-radius: var(--imageBorderRadius);
   border: none;
-  background-color: rgba(var(--accountLightBlue),1);
+  background-color: rgba(var(--accountLightBlue), 1);
   color: white;
-  }
+}
 
-  .more-button p{
-    font-size: 1.5em;
-    font-weight: 700;
-    margin: 0 auto;
-  }
+.more-button p {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 0 auto;
+}
 
-  .more-button button:hover{
-    color: var(--tmdbLightBlue)
-  }
+.more-button button:hover {
+  color: var(--tmdbLightBlue)
+}

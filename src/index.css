@@ -1,121 +1,124 @@
 body {
-    width:100%;
-    flex-direction:column;
-    -ms-overflow-style:-ms-autohiding-scrollbar;
-    /* background-color:rgba(var(--tmdbDarkBlue),1); */
-    color:#000;
-    font-family:"Source Sans Pro",Arial,sans-serif;
-    font-size:1em;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale
-  }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
-  
-   html {
-    --numberOfDiscoverColumns:1;
-    --discoverColumnPadding:30px
-  } 
+  width: 100%;
+  flex-direction: column;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  /* background-color:rgba(var(--tmdbDarkBlue),1); */
+  color: #000;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
 
-  @media only screen and (min-width:700px) {
-    html {
-      --numberOfDiscoverColumns:2
-    }
-  }
-  @media only screen and (min-width:900px) {
-    html {
-      --numberOfDiscoverColumns:3
-    }
-  }
-  @media only screen and (min-width:1040px) {
-    html {
-      --numberOfDiscoverColumns:4
-    }
-  }
-  @media only screen and (min-width:1240px) {
-    html {
-      --numberOfDiscoverColumns:5
-    }
-  }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
 
+html {
+  --numberOfDiscoverColumns: 1;
+  --discoverColumnPadding: 30px
+}
+
+@media only screen and (min-width:700px) {
   html {
-    font-family:sans-serif;
-    -ms-text-size-adjust:100%;
-    -webkit-text-size-adjust:100%;
-    --scrollerGrey:219,219,219;
-    --lightGrey:227,227,227;
-    --darkerGrey:200,200,200;
-    --vibrantDarkBlue:6,37,65;
-    --vibrantLightBlue:0,118,241;
-    --tmdbDarkBlue:3,37,65;
-    --tmdbLightBlue:1,180,228;
-    --tmdbLighterGreen:192,254,207;
-    --tmdbLightGreen:30,213,169;
-    --tmdbLogoGreen:144,206,161;
-    --tmdbLogoOrange:253,193,112;
-    --tmdbLogoRed:217,59,99;
-    --accountSilver:149,149,149;
-    --accountPink:234,20,140;
-    --accountPurple:128,91,231;
-    --accountGreen:1,210,119;
-    --accountTeal:1,198,172;
-    --accountLightBlue:1,180,228;
-    --accountBlue:1,119,210;
-    --accountOrange:210,119,1;
-    --accountYellow:210,144,1;
-    --accountRed:212,2,66;
-    --imageBorderRadius:8px;
-    --maxPrimaryPageWidth:1400px;
-    --maxHeaderHeight: 64px;
+    --numberOfDiscoverColumns: 2
   }
+}
+
+@media only screen and (min-width:900px) {
+  html {
+    --numberOfDiscoverColumns: 3
+  }
+}
+
+@media only screen and (min-width:1040px) {
+  html {
+    --numberOfDiscoverColumns: 4
+  }
+}
+
+@media only screen and (min-width:1240px) {
+  html {
+    --numberOfDiscoverColumns: 5
+  }
+}
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  --scrollerGrey: 219, 219, 219;
+  --lightGrey: 227, 227, 227;
+  --darkerGrey: 200, 200, 200;
+  --vibrantDarkBlue: 6, 37, 65;
+  --vibrantLightBlue: 0, 118, 241;
+  --tmdbDarkBlue: 3, 37, 65;
+  --tmdbLightBlue: 1, 180, 228;
+  --tmdbLighterGreen: 192, 254, 207;
+  --tmdbLightGreen: 30, 213, 169;
+  --tmdbLogoGreen: 144, 206, 161;
+  --tmdbLogoOrange: 253, 193, 112;
+  --tmdbLogoRed: 217, 59, 99;
+  --accountSilver: 149, 149, 149;
+  --accountPink: 234, 20, 140;
+  --accountPurple: 128, 91, 231;
+  --accountGreen: 1, 210, 119;
+  --accountTeal: 1, 198, 172;
+  --accountLightBlue: 1, 180, 228;
+  --accountBlue: 1, 119, 210;
+  --accountOrange: 210, 119, 1;
+  --accountYellow: 210, 144, 1;
+  --accountRed: 212, 2, 66;
+  --imageBorderRadius: 8px;
+  --maxPrimaryPageWidth: 1400px;
+  --maxHeaderHeight: 64px;
+}
 
 
-  .h3-title{
-    display: inline-flex;
+.h3-title {
+  display: inline-flex;
   align-items: center;
   width: 100%;
   font-size: 1em;
   font-weight: 300;
   margin-bottom: 10px;
-  }
+}
 
 
-  .info-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #80c4ffad;
-    color: #2365d6;
-    border: 1px solid #2365d6;
-    border-radius: 4px;
-    padding: 10px 20px;
-    margin: 10px 0;
-  }
-  
-  .info-icon {
-    font-size: 24px;
-    margin-right: 10px;
-  }
-  
-  .info-message {
-    font-size: 16px;
-  }
+.info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #80c4ffad;
+  color: #2365d6;
+  border: 1px solid #2365d6;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin: 10px 0;
+}
 
-  .submenu{
-    max-width: 100%;
-  }
+.info-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
 
-  @media (max-width: 768px) {
-    .content {
+.info-message {
+  font-size: 16px;
+}
+
+.submenu {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .content {
     flex-wrap: wrap;
-    }
-    
-    .submenu,
-    .submenu .collapsible-card{
-      width: 100%;
-      
-    }
-    }
+  }
+
+  .submenu,
+  .submenu .collapsible-card {
+    width: 100%;
+
+  }
+}

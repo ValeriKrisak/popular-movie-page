@@ -1,5 +1,5 @@
 li {
-display: inline-flex;
+  display: inline-flex;
   border: 1px solid #9e9e9e;
   border-radius: 14px;
   padding: 4px 12px;
@@ -8,23 +8,23 @@ display: inline-flex;
   margin-top: 8px;
 }
 
-li:hover{
-    background-color: rgb(1, 180, 228);
+li:hover {
+  background-color: rgb(1, 180, 228);
   border-color: rgb(1, 180, 228);
 }
 
 li.selected {
   background-color: rgb(1, 180, 228);
-  
+
   border-color: rgb(1, 180, 228);
 }
 
-.genre-button{
+.genre-button {
   border: none;
   background: transparent;
 }
 
 li:hover .genre-button,
-li.selected .genre-button{
+li.selected .genre-button {
   color: #fff;
 }
