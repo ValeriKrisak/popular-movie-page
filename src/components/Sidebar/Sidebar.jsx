@@ -16,7 +16,7 @@ import GenreItem from "../UI/GenreItem/GenreItem";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchData, fetchGenres } from "../../actions/dataActions";
-import { setFilter } from "../../store/dataSlice";
+import { setFilter, setPage } from "../../store/dataSlice";
 import Slider from "../UI/Slider/Slider";
 import { fetchProviders } from "../../actions/uiAction";
 
@@ -43,6 +43,7 @@ export default function Sidebar() {
   function handleFilterChange() {
     dispatch(setFilter(selectedIds.join(",")));
     dispatch(fetchData(1, selectedIds.join(",")));
+    dispatch(setPage(1));
   }
 
   return (

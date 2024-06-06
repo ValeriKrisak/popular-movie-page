@@ -1,6 +1,7 @@
 import axios from 'axios';
-import { setData, addData, setPage, setGenres, setLoading } from '../store/dataSlice';
+import { setData, addData, setPage, setGenres, setLoading, setTotalPages } from '../store/dataSlice';
 import Error from '../components/UI/Error/Error';
+
 const apiKey = process.env.REACT_APP_API_KEY;
 
 
@@ -17,8 +18,10 @@ export const fetchData = (page, filter) => async (dispatch) => {
         });
 
         const dataArray = Object.values(response.data.results);
+        const totalPages = response.data.total_pages;
 
         dispatch(setData(dataArray));
+        dispatch(setTotalPages(totalPages));
         dispatch(setLoading('loaded'));
     } catch (error) {
         (dispatch(setLoading('error')) && <Error message={'Data has been corrupted'} />)
@@ -26,7 +29,13 @@ export const fetchData = (page, filter) => async (dispatch) => {
     }
 };
 
-export const loadMoreData = (page, filter) => async (dispatch) => {
+export const loadMoreData = (page, filter) => async (dispatch, getState) => {
+    const { totalPages } = getState().data;
+
+    if (page >= totalPages) {
+        return;
+    }
+
     try {
         const response = await axios.get(`https://api.themoviedb.org/3/discover/movie`, {
             params: {

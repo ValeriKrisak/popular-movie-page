@@ -9,17 +9,24 @@ import Info from "../UI/Info";
 
 export default function CardList() {
   const dispatch = useDispatch();
-  const { items, page, filter, scrollEnabled, loadingStatus } = useSelector(
-    (state) => state.data
-  );
+  const {
+    items,
+    page,
+    filter,
+    scrollEnabled,
+    loadingStatus,
+    totalPages,
+  } = useSelector((state) => state.data);
 
   useEffect(() => {
     dispatch(fetchData(1, filter));
   }, [dispatch, filter]);
 
   const handleLoadMore = () => {
-    dispatch(loadMoreData(page, filter));
-    dispatch(setScrollEnabled(true));
+    if (page < totalPages) {
+      dispatch(loadMoreData(page, filter));
+      dispatch(setScrollEnabled(true));
+    }
   };
 
   const handleScroll = useCallback(() => {
@@ -65,7 +72,7 @@ export default function CardList() {
               ))}
             </div>
           )}
-          {items.length < 20 ? (
+          {(items.length <= 20 && page > totalPages) || page === totalPages ? (
             <Info
               className="card-list"
               message="Sorry, there are no more items available under this filter"

@@ -9,10 +9,12 @@ const dataSlice = createSlice({
         genres: [],
         scrollEnabled: false,
         loadingStatus: '',
+        totalPages: 0,
     },
     reducers: {
         setData: (state, action) => {
             state.items = action.payload;
+            state.totalPages = action.payload.totalPages;
         },
 
         addData: (state, action) => {
@@ -35,9 +37,12 @@ const dataSlice = createSlice({
         },
         setLoading: (state, action) => {
             state.loadingStatus = action.payload;
-        }
+        },
+        setTotalPages: (state, action) => {
+            state.totalPages = action.payload;
+        },
     },
 });
 
-export const { setData, addData, setPage, setGenres, setFilter, setScrollEnabled, setLoading } = dataSlice.actions;
+export const { setData, addData, setPage, setGenres, setFilter, setScrollEnabled, setLoading, setTotalPages } = dataSlice.actions;
 export default dataSlice.reducer;
