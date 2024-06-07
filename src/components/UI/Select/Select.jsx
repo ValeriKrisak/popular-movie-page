@@ -27,7 +27,7 @@ export default function Select({ title, collection }) {
       case "Providers":
         return (
           <span className="provider-list">
-            {collection[0]
+            {collection
               .filter((item) => [1, 3, 4, 5].includes(item.display_priority))
               .map((filteredItem) => (
                 <li key={filteredItem.provider_id} className="providers-item">

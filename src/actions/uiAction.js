@@ -46,23 +46,20 @@ export const fetchLanguages = () => async (dispatch) => {
 };
 
 export const fetchProviders = () => async (dispatch) => {
-    const localData = localStorage.getItem('providers');
-    if (localData) {
-        dispatch(setProviders(JSON.parse(localData)));
-    } else {
-        try {
-            const response = await axios.get(` https://api.themoviedb.org/3/watch/providers/movie`, {
-                params: {
-                    api_key: apiKey
-                }
-            });
-            const dataArray = Object.values(response.data);
-            localStorage.setItem('providers', JSON.stringify(dataArray));
-            dispatch(setProviders(dataArray[0]));
-        } catch (error) {
-            console.error("Error fetching providers:", error);
-            <Error message={error} />;
-        }
+
+    try {
+        const response = await axios.get(` https://api.themoviedb.org/3/watch/providers/movie`, {
+            params: {
+                api_key: apiKey
+            }
+        });
+        const dataArray = Object.values(response.data);
+        localStorage.setItem('providers', JSON.stringify(dataArray));
+        dispatch(setProviders(dataArray[0]));
+    } catch (error) {
+        console.error("Error fetching providers:", error);
+        <Error message={error} />;
     }
+
 };
 

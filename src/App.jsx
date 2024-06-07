@@ -2,8 +2,22 @@ import "./App.css";
 import CardList from "./components/CardList/CardList";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      localStorage.removeItem("countries");
+      localStorage.removeItem("languages");
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
+
   return (
     <div className="page-wrap">
       <Header />
