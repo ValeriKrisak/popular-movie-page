@@ -2,6 +2,9 @@
 
 Welcome to Movie Page, a simple web application for exploring movies! This README will guide you through setting up the project, running it on your local machine, and obtaining an API key for The Movie Database (TMDb) API.
 
+## Note
+Thank you for checking my take on the Movie Database. This application has been part of an assignment. You can load more movies and filter them by genres. If you want to see more filters working, let me know. :) 
+
 ## Getting Started
 
 To get started with Movie Page, follow these simple steps:
@@ -56,10 +59,6 @@ Launches the test runner in the interactive watch mode.
 ### `npm run build`
 
 Builds the app for production to the `build` folder.
-
-### `npm run eject`
-
-Note: This command is a one-way operation. Once you eject, you can't go back!
 
 ## Contributing
 
